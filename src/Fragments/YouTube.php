@@ -23,6 +23,9 @@ class YouTube implements Fragment
                 // This is a CDN for youtube static assets which sometimes are JS assets
                 's.ytimg.com',
             ])
-            ->addDirective(Directive::FRAME, "*.youtube.com");
+            ->addDirective(Directive::FRAME, [
+                '*.youtube.com',
+                '*.youtube-nocookie.com'
+            ]);
     }
 }

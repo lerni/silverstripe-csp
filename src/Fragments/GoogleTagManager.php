@@ -44,9 +44,9 @@ class GoogleTagManager implements Fragment
             // Preferred approach is nonce the GoogleTagManager gtag.js script
             // however to provide a default backup for other digital marketing tools like Adobe tag manager
             // which can call gtag.js script without applying a nonce, whitelisting the GTM domain is required.
-            ->addDirective(Directive::SCRIPT, 'https://www.googletagmanager.com')
-            ->addDirective(Directive::FRAME, 'https://www.googletagmanager.com')
-            ->addDirective(Directive::IMG, 'https://www.googletagmanager.com');
+            ->addDirective(Directive::SCRIPT, 'www.googletagmanager.com')
+            ->addDirective(Directive::FRAME, 'www.googletagmanager.com')
+            ->addDirective(Directive::IMG, 'www.googletagmanager.com');
     }
 
     /*
@@ -65,15 +65,15 @@ class GoogleTagManager implements Fragment
         $policy
             ->addDirective(Directive::SCRIPT, 'https://tagmanager.google.com')
             ->addDirective(Directive::STYLE, [
-                'https://tagmanager.google.com',
-                'https://fonts.googleapis.com',
+                'tagmanager.google.com',
+                'fonts.googleapis.com',
             ])
             ->addDirective(Directive::IMG, [
-                'https://ssl.gstatic.com',
-                'https://www.gstatic.com',
+                'ssl.gstatic.com',
+                'www.gstatic.com',
             ])
             ->addDirective(Directive::FONT, [
-                'https://fonts.gstatic.com',
+                'fonts.gstatic.com',
                 Scheme::DATA,
             ]);
     }
@@ -85,11 +85,11 @@ class GoogleTagManager implements Fragment
     {
         $policy
             ->addDirective(Directive::SCRIPT, [
-                'https://www.google-analytics.com',
-                'https://ssl.google-analytics.com',
+                'www.google-analytics.com',
+                'ssl.google-analytics.com',
             ])
-            ->addDirective(Directive::IMG, 'https://www.google-analytics.com')
-            ->addDirective(Directive::CONNECT, 'https://www.google-analytics.com');
+            ->addDirective(Directive::IMG, 'www.google-analytics.com')
+            ->addDirective(Directive::CONNECT, 'www.google-analytics.com');
     }
 
     /*
@@ -98,7 +98,7 @@ class GoogleTagManager implements Fragment
     public static function optimize(Policy $policy): void
     {
         $policy
-            ->addDirective(Directive::SCRIPT, 'https://www.google-analytics.com');
+            ->addDirective(Directive::SCRIPT, 'www.google-analytics.com');
     }
 
     /*
@@ -108,12 +108,12 @@ class GoogleTagManager implements Fragment
     {
         $policy
             ->addDirective(Directive::SCRIPT, [
-                'https://www.googleadservices.com',
-                'https://www.google.com',
+                'www.googleadservices.com',
+                'www.google.com',
             ])
             ->addDirective(Directive::IMG, [
-                'https://googleads.g.doubleclick.net',
-                'https://www.google.com',
+                'googleads.g.doubleclick.net',
+                'www.google.com',
             ]);
     }
 
@@ -124,11 +124,11 @@ class GoogleTagManager implements Fragment
     {
         $policy
             ->addDirective(Directive::SCRIPT, [
-                'https://www.googleadservices.com',
-                'https://googleads.g.doubleclick.net',
-                'https://www.google.com',
+                'www.googleadservices.com',
+                'googleads.g.doubleclick.net',
+                'www.google.com',
             ])
-            ->addDirective(Directive::IMG, 'https://www.google.com')
-            ->addDirective(Directive::FRAME, 'https://bid.g.doubleclick.net');
+            ->addDirective(Directive::IMG, 'www.google.com')
+            ->addDirective(Directive::FRAME, 'bid.g.doubleclick.net');
     }
 }

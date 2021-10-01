@@ -15,7 +15,7 @@ class Vimeo implements Fragment
         $policy
             // We want to allow scripts loaded from here as they recommend using their embed player
             ->addDirective(Directive::SCRIPT, 'player.vimeo.com')
-            ->addDirective(Directive::FRAME, "player.vimeo.com")
-            ->addDirective(Directive::CHILD, "player.vimeo.com");
+            ->addDirective(Directive::FRAME, 'player.vimeo.com')
+            ->addDirective(Directive::CHILD, 'player.vimeo.com');
     }
 }
