@@ -13,18 +13,18 @@ class GoogleFonts implements Fragment
         # https://rapidsec.com/csp-packages/google_fonts
         $policy
             ->addDirective(Directive::IMG, [
-                'fonts.gstatic.com'
+                'https://fonts.gstatic.com'
             ])
             ->addDirective(Directive::STYLE, [
-                'fonts.googleapis.com'
+                'https://fonts.googleapis.com'
             ])
             ->addDirective(Directive::FONT, [
-                'fonts.gstatic.com',
-                'fonts.googleapis.com'
+                'https://fonts.gstatic.com',
+                'https://fonts.googleapis.com'
             ])
             ->addDirective(Directive::CONNECT, [
-                'fonts.googleapis.com',
-                'fonts.gstatic.com'
+                'https://fonts.googleapis.com',
+                'https://fonts.gstatic.com'
             ]);
     }
 }
